@@ -1,0 +1,134 @@
+ <html>
+<head> <title> QUIZZER! </title>
+<style type="text/css">
+<!--
+a:link {
+ text-decoration:underline
+}
+a:visited {
+color:black; text-decoration:underline
+}
+a:active {
+color:red; text-decoration:underline
+}
+a:hover {
+color:Green; font-size:32px; font-weight:bold; font-style:italic; text-decoration:underline
+}
+body {
+background:url(/bg.jpg) repeat fixed; color:Green; font-size:18px; font-weight:bold; font-family:Arial;
+}
+
+--></style>
+</head>
+<body>
+<h1 style="text-align:center"> Unjumble the Jumbled </h1>
+<h4 style="text-align:center"></h4>
+<p id="img" align=center style="float:center"></p>
+<h4 style="text-align:center"></h4>
+<p id="hint" align=center></p>
+<p id="name" style="text-align:center"></p>
+<br/>
+<p align=center>
+
+GUESS : <input type="text" name="input_str" id="input_str" align=center style="text-align:center" value="Enter the brand name"/><br/>
+
+
+<button onclick="hint_1()">Hint</button>
+<!-- <button onclick="hint_2()">hint-2</button> -->
+<button onclick="check()">submit</button>
+</p>
+<fb:like href="https://www.facebook.com/pages/Logo-Quiz/519844888042075?fref=ts" layout="standard" show-faces="true" width="450" action="like" colorscheme="light" />
+<script type="text/javascript" charset="UTF-8" src="in.js"> </script>
+<script>
+var score=0;
+var j=Math.floor((Math.random()*40+7));
+var hint=2;
+start(j);
+function shuffle(string) {
+  var parts = string.split('');
+	for (var i = parts.length; i > 0;) {
+	        var random = parseInt(Math.random() * i);
+	       	var temp = parts[--i];
+	       	parts[i] = parts[random];
+	       	parts[random] = temp;
+	}
+    	return parts.join('');
+}
+
+function start() {
+		
+	document.getElementById("name").innerHTML=shuffle(names[j]);
+	document.getElementById("hint").innerHTML="no.of hints left=" + hint;
+	
+	
+	if(item[j]=="food")
+	document.getElementById("img").innerHTML="<img  src='food.png' width='20%'/>";
+	else if(item[j]=="car")
+	document.getElementById("img").innerHTML="<img src='car.jpg' width='20%'/>";
+	else if(item[j]=="sports")
+	document.getElementById("img").innerHTML="<img src='sports.gif' width='20%'/>";
+	else if(item[j]=="cartoons")
+	document.getElementById("img").innerHTML="<img src='cartoons.gif' width='20%'/>";
+	else if(item[j]=="web")
+	document.getElementById("img").innerHTML="<img src='web.png' width='20%'/>";
+
+
+}
+function check()
+{	
+		
+	var x = document.getElementById("input_str").value;
+	if(x==names[j])
+	{
+		score+=1;
+		if(score%5==0)
+		{
+			hint+=1;
+		}
+		if(score==10)
+		{
+			
+			document.getElementById("hint").innerHTML="Winner";//to add a winning wall paper
+			alert("congrats you win");
+		}
+		alert("correct !! Your score is"+score);
+		start(j=Math.floor((Math.random()*10+1)));
+		return;
+	}
+	else
+	{
+		alert("Wrong");
+	}
+}
+function hint_1()
+{
+	if(hint>0)
+	{
+		document.getElementById("hint").innerHTML="<img "+"width='10%'"+"src="+"logos/"+arr_1[j]+" />" ;
+		//alert(arr_1[j]);//might be incorrect because the value of j may not change
+		hint-=1;
+	}
+	if(hint<0)
+	{
+		document.getElementById("hint").innerHTML="No more hints left";
+		//alert("No more hints left");
+	}
+}
+function hint_2()
+{
+	if(hint>0)
+	{
+		document.getElementById("hint").innerHTML=arr_1[j];
+		//alert(arr_1[j]);//might be incorrect because the value of j may not change
+		hint-=1;
+	}
+	if(hint<0)
+	{
+		document.getElementById("hint").innerHTML="No more hints left";
+		//alert("No more hints left");
+	}
+}
+	
+</script>
+</body>
+</html>		
