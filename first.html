@@ -1,0 +1,225 @@
+<html>
+<head>
+<link rel="Icon" href="favicon.ico" />
+<title> Welcome to Quizzr! </title>
+<style>
+
+
+body {
+        font-family: Arial, sans-serif;
+    }
+a.button {
+    box-shadow: 
+        1px -1px 0 rgb(241,10,10),
+        2px -2px 0 rgb(241,10,10),
+        3px -3px 0 rgb(241,10,10),
+        4px -4px 0 rgb(241,10,10),
+        0 0 10px rgba(0,0,0,0.6);
+        -webkit-box-shadow: /* Safari, Chrome */
+            1px -1px 0 rgb(241,91,38),
+            2px -2px 0 rgb(241,91,38),
+            3px -3px 0 rgb(241,91,38),
+            4px -4px 0 rgb(241,91,38),
+            0 0 10px rgba(0,0,0,0.6);
+        -moz-box-shadow: /* Firefox */
+            1px -1px 0 rgb(200,10,10),
+            2px -2px 0 rgb(200,10,10),
+            3px -3px 0 rgb(200,10,10),
+            4px -4px 0 rgb(241,10,10),
+            0 0 10px rgba(0,0,0,0.6);
+        -o-box-shadow: /* Opera */
+            1px -1px 0 rgb(241,91,38),
+            2px -2px 0 rgb(241,91,38),
+            3px -3px 0 rgb(241,91,38),
+            4px -4px 0 rgb(241,91,38),
+            0 0 10px rgba(0,0,0,0.6);
+    color: rgb(100,100,100);
+    display: block;
+    font-size: 36px;
+    margin: 50;
+    text-align: center;
+    text-transform: uppercase;
+}
+a#tutorial-toggle {
+    background: rgb(255,255,255);
+    border-radius: 25px;
+        -webkit-border-radius: 25px; /* Safari, Chrome */
+        -moz-border-radius: 50px; /* Firefox */
+        -o-border-radius: 25px; /* Opera */
+    height: 30px;
+    line-height: 30px;
+    width: 30px;
+}
+    a.on {
+        box-shadow: 
+            1px -1px 0 rgb(241,91,38),
+            2px -2px 0 rgb(241,91,38),
+            0 0 6px rgba(0,0,0,0.6);
+            -webkit-box-shadow: /* Safari, Chrome */
+                1px -1px 0 rgb(241,91,38),
+                2px -2px 0 rgb(241,91,38),
+                0 0 6px rgba(0,0,0,0.6);
+            -moz-box-shadow: /* Firefox */
+                1px -1px 0 rgb(241,91,38),
+                2px -2px 0 rgb(241,91,38),
+                0 0 6px rgba(0,0,0,0.6);
+            -o-box-shadow: /* Opera */
+                1px -1px 0 rgb(241,91,38),
+                2px -2px 0 rgb(241,91,38),
+                0 0 6px rgba(0,0,0,0.6);
+        color: rgb(0,0,0);
+        margin: -2px -2px 2px 2px;
+    }
+    a.button:active,
+    a.on:active {
+        box-shadow: 
+            1px -1px 0 rgb(241,91,38),
+            0 0 3px rgba(0,0,0,0.3);
+            -webkit-box-shadow: /* Safari, Chrome */
+                1px -1px 0 rgb(241,91,38),
+                0 0 3px rgba(0,0,0,0.3);
+            -moz-box-shadow: /* Firefox */
+                1px -1px 0 rgb(241,91,38),
+                0 0 3px rgba(0,0,0,0.3);
+            -o-box-shadow: /* Opera */
+                1px -1px 0 rgb(241,91,38),
+                0 0 3px rgba(0,0,0,0.3);
+        margin: -3px -3px 3px 3px;
+    }
+a.css3dbutton {
+    background: darkred; /* background color of button */
+    color: white;
+    text-decoration: none;
+    font: bold 28px Arial; /* font size 
+
+and style */
+    position: relative;
+  	top: 0; /* anchor main button's position */
+    bottom: -12px; /* Depth of 3D effect. :after pseudo element 
+
+inherits this value so it's animated in Chrome. See: kizu.ru/en/pseudos */
+		margin-bottom: 12px;
+    -moz-box-shadow: 0 -15px 5px darkred inset;
+   
+
+ -webkit-box-shadow: 0 -15px 5px darkred inset;
+    box-shadow: 0 -15px 5px darkred inset;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 
+
+0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+a.css3dbutton, a.css3dbutton:after {
+    display: inline-
+
+block;
+    padding: 10px 15px; /* vertical and horizontal padding of button */
+    -moz-border-radius: 8px/15px;
+    -webkit-border-radius: 8px/15px;
+    
+
+border-radius: 8px/15px;
+    outline: none;
+}
+
+a.css3dbutton:after { /* pseudo element to construct 3D side of button */
+    content: "";
+    position: absolute;
+   
+
+ padding: 0;
+    z-index: -1;
+    bottom: inherit; /* Inherit main button bottom value to animate it. See: kizu.ru/en/pseudos */
+    left: 0;
+    width: 100%;
+    
+
+height: 100%;
+    background: #6e0e0c; /* background color of 3D effect */
+    -moz-box-shadow: 1px 0 3px gray;
+    -webkit-box-shadow: 1px 0 3px gray;
+    box-
+
+shadow: 1px 0 3px gray;
+}
+
+a.css3dbutton:hover {
+    -moz-box-shadow: 0 25px 5px rgba(182, 64, 61, 0.7) inset;
+    -webkit-box-shadow: 0 25px 5px rgba(182, 64, 
+
+61, 0.7) inset;
+    box-shadow: 0 25px 5px rgba(182, 64, 61, 0.7) inset;
+    background: #bc3835; /* background color when mouse rolls over button */
+}
+
+a.css3dbutton:active {
+    top: 12px; /* shift button down 12px when depressed. Change 12px to match button's "bottom" property above */
+    bottom: 0;
+    -
+
+moz-box-shadow: 0 -20px 5px darkred inset, 1px 1px 2px #eee;
+    -webkit-box-shadow: 0 -20px 5px darkred inset, 1px 1px 2px #eee;
+    box-shadow: 0 -20px 5px 
+
+darkred inset, 1px 1px 2px #eee;
+}
+  table.center {
+    margin-left:auto; 
+    margin-right:auto;
+  }
+
+::-moz-selection {
+       background-color: #FFA;
+       color: 
+
+#000;
+
+
+</style>
+</head>
+<body>
+<div style="text-align: center;"><img src="quiz.png" alt="Sorry!" style="margin: 1 auto;" /></div>
+<div style="text-align:center;">
+<table border="0" class="center">
+<tr>
+<td><a href="#" target="_blank" title="View">
+<img height=200 width=180 src="sports-animated.gif" alt="Sports" 
+
+style="border:none;"/></a></td>
+<td><a href="#" target="_blank" title="View">
+<img height=200 width=180 src="food.png" alt="Food" 
+
+style="border:none;"/></a></td>
+<td><a href="#" target="_blank" title="View">
+<img height=200 width=180 src="Lightning.jpg" alt="Cars" 
+
+style="border:none;"/></a></td>
+<td><a href="#" target="_blank" title="View">
+<img height=200 width=180 src="entertain.gif" alt="Entertainment" 
+
+style="border:none;"/></a></td>
+<td><a href="#" target="_blank" title="View">
+<img height=200 width=180 src="animated.png" alt="Web" 
+
+style="border:none;"/></a></td>
+</tr>
+<tr>
+<td><a href="#"?flag="1" class="css3dbutton"> Sport </a></td>
+<td><a href="#"?flag="2" class="css3dbutton"> Food 
+
+</a></td>
+<td><a href="#"?flag="3" class="css3dbutton"> Cars </a></td>
+<td><a href="#"?flag="4" class="css3dbutton"> Kids </a></td>
+<td><a href="#"?flag="5" 
+
+class="css3dbutton"> Web </a></td>
+</tr></div></table><div style="text-align:center"> <a href="1.html" class=button> Play </a></div>
+
+</div>
+</body>
+</html>
+
+
